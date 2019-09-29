@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+    - name: Test this action
+      uses: Bpazy/yuque-action
+      with:
+        access-token: 'this-is-test-access-token'
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"

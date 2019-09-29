@@ -1,0 +1,25 @@
+{
+  "name": "yuque-action",
+  "version": "1.0.0",
+  "description": "发布文档到语雀。deploy document to yuque.",
+  "scripts": {
+    "build": "ncc build src/yuque-action.ts -o lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bpazy/yuque-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bpazy/yuque-action/issues"
+  },
+  "homepage": "https://github.com/Bpazy/yuque-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.1",
+    "@actions/github": "^1.1.0",
+    "@octokit/graphql": "^4.2.0"
+  },
+  "devDependencies": {}
+}

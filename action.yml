@@ -1,0 +1,12 @@
+name: 'yuque-action'
+description: 'deploy document to yuque'
+inputs:
+  access-token:
+    description: 'yuque personal access token'
+    required: true
+outputs:
+  time:
+    description: 'The time we greeted you'
+runs:
+  using: 'node12'
+  main: 'lib/yuque-action.js'

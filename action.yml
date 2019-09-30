@@ -1,9 +1,0 @@
-name: 'yuque-action'
-description: 'deploy document to yuque'
-inputs:
-  access-token:
-    description: 'yuque personal access token'
-    required: true
-runs:
-  using: 'node12'
-  main: 'lib/index.js'

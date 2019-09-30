@@ -1,13 +1,25 @@
 import * as core from '@actions/core';
-import * as github from '@actions/github';
+import Axios from 'axios';
 
-try {
-  const accessToken = core.getInput('access-token');
-  console.log(`accessToken: ${accessToken}!`);
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`);
-} catch (error) {
-  core.setFailed(error.message);
+function httpClient() {
+  return Axios.create({
+    baseURL: 'https://www.yuque.com/api/v2',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-Auth-Token': '',
+      'User-Agent': 'yuque-action',
+    }
+  });
 }
+
+async function test() {
+  try {
+    const instance = httpClient();
+    const response = await instance.get('/repos/**/**/docs');
+    console.log(response.data);
+  } catch (error) {
+    core.setFailed(error.message);
+  }
+}
+
+test();

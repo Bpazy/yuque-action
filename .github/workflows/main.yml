@@ -12,5 +12,3 @@ jobs:
         uses: Bpazy/yuque-action@master
         with:
           access-token: "this-is-test-access-token"
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
